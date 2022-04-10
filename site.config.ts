@@ -9,8 +9,8 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Andy yin blog',
-  domain: 'www.andyzy.dev',
+  name: 'Andyblog',
+  domain: 'https://www.andyzy.dev/',
   author: 'Andy',
 
   // open graph metadata (optional)
@@ -47,16 +47,20 @@ export default siteConfig({
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
-  navigationStyle: 'default'
-  // navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   }
-  // ]
+  //navigationStyle: 'default'
+  navigationStyle: 'custom',
+  navigationLinks: [
+    {
+      title: '归档',
+      pageId: '686494888f2c4084ba333af2b4170ece'
+    },
+    {
+      title: '关于我',
+      pageId: '6ccec74275a74640be2d68f08c8775c2'
+    },
+    {
+      title: '联系我',
+      pageId: '62c966931caa4f87a41ed4b1ca0c9c0b'
+    }
+  ]
 })
