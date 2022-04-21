@@ -224,33 +224,25 @@ transition: all 1.0s ease-in-out;*/
   position: relative;
   transition: unset;
   opacity: 1;
-  border-bottom-width: 0.08rem;
+  border-bottom-width: 0.1rem;
+  background: transparent;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 0 0.1rem;
 }
 
 .notion-link:focus,
 .notion-link:hover {
-  border-bottom-style: none;
-}
+  border-bottom-color: transparent;
 
-.notion-link:focus::after,
-.notion-link:hover::after {
-  visibility: visible;
-  width: 100%;
-  left: 0;
-}
+  background-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.1rem;
 
-.notion-link::after {
-  content: '';
-  position: absolute;
-  bottom: -0.1rem;
-  left: 50%;
-  width: 0;
-  height: 0.1rem;
-  transform: scaleX(1);
-  transition-property: width, left;
+  transition-property: background-position, background-size;
   transition-duration: 300ms;
-  visibility: hidden;
-  background: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
 }
 
 .notion-red_background,
@@ -338,15 +330,15 @@ transition: all 1.0s ease-in-out;*/
   );
 }
 
-.dark-mode .notion-red_background,
-.dark-mode .notion-pink_background,
-.dark-mode .notion-blue_background,
-.dark-mode .notion-purple_background,
-.dark-mode .notion-teal_background,
-.dark-mode .notion-yellow_background,
-.dark-mode .notion-orange_background,
-.dark-mode .notion-brown_background,
-.dark-mode .notion-gray_background {
+[data-theme='dark'] .notion-red_background,
+[data-theme='dark'] .notion-pink_background,
+[data-theme='dark'] .notion-blue_background,
+[data-theme='dark'] .notion-purple_background,
+[data-theme='dark'] .notion-teal_background,
+[data-theme='dark'] .notion-yellow_background,
+[data-theme='dark'] .notion-orange_background,
+[data-theme='dark'] .notion-brown_background,
+[data-theme='dark'] .notion-gray_background {
   padding: 0;
   margin: 0;
   border-radius: 0;
@@ -368,7 +360,7 @@ transition: all 1.0s ease-in-out;*/
   backdrop-filter: saturate(180%) blur(16px);
 }
 
-.dark-mode .notion-header {
+[data-theme='dark'] .notion-header {
   background: transparent;
   box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
   backdrop-filter: saturate(180%) blur(8px);
@@ -376,7 +368,7 @@ transition: all 1.0s ease-in-out;*/
 
 /* Workaround for Firefox not supporting backdrop-filter yet */
 @-moz-document url-prefix() {
-  .dark-mode .notion-header {
+  [data-theme='dark'] .notion-header {
     background: hsla(203, 8%, 20%, 0.8);
   }
 }
